@@ -1,23 +1,34 @@
-apply plugin: 'application'
+plugins {
+    id 'application'
+    id 'java'
+}
 
-mainClassName = 'com.genymobile.gnirehtet.Main'
+java {
+    sourceCompatibility = JavaVersion.VERSION_18
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+
+application {
+    mainClass.set("com.genymobile.gnirehtet.Main")
+}
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.13.2'
 }
 
 jar {
+    archiveBaseName = 'gnirehtet'
     manifest {
         attributes(
-                'Main-Class': mainClassName
+                'Main-Class': "com.genymobile.gnirehtet.Main"
         )
     }
-    baseName 'gnirehtet'
 }
 
-task assembleDebug(dependsOn: 'jar')
-task assembleRelease(dependsOn: ['build', 'jar'])
+tasks.register('assembleDebug') { dependsOn 'jar' }
+tasks.register('assembleRelease') { dependsOn['build', 'jar'] }
 
 apply from: "$project.rootDir/config/java-checkstyle.gradle"
 

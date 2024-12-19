@@ -1,14 +1,15 @@
 apply plugin: 'com.android.application'
 
-android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+//apply plugin: 'com.android.application'
 
+android {
+    namespace "com.genymobile.gnirehtet"
     defaultConfig {
         archivesBaseName = "gnirehtet" // change apk name
         applicationId "com.genymobile.gnirehtet"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 29 //TODO: REVISAR
+        compileSdk rootProject.ext.compileSdkVersion
         versionCode 9
         versionName "2.5.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -19,10 +20,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildFeatures {
+        viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment:2.6.0'
+    implementation 'androidx.navigation:navigation-ui:2.6.0'
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })

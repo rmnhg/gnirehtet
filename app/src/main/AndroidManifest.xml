@@ -15,7 +15,17 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name="com.genymobile.gnirehtet.GnirehtetActivity"
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".GnirehtetActivity"
             android:exported="true"
             android:permission="android.permission.WRITE_SECURE_SETTINGS"
             android:theme="@style/Theme.Transparent">
@@ -26,7 +36,7 @@
         </activity>
 
         <service
-            android:name="com.genymobile.gnirehtet.GnirehtetService"
+            android:name=".GnirehtetService"
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.BIND_VPN_SERVICE">
