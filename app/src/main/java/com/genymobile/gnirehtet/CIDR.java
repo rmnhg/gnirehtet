@@ -76,7 +76,11 @@ public class CIDR implements Parcelable {
 
     @Override
     public String toString() {
-        return address.getHostAddress() + "/" + prefixLength;
+        StringBuilder sb = new StringBuilder();
+        sb.append(address.getHostAddress());
+        sb.append("/");
+        sb.append(prefixLength);
+        return sb.toString();
     }
 
     @Override

@@ -4,8 +4,8 @@
     <string name="relay_disconnected">Disconnected from the relay server</string>
     <string name="stop_vpn">Stop Gnirehtet</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="client_fragment_label">Client Fragment</string>
+    <string name="server_fragment_label">Server Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -45,4 +45,21 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="server_status">Server status</string>
+    <string name="client_status">Client status</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="to_server_screen">Switch to server screen</string>
+    <string name="to_client_screen">Switch to client screen</string>
+    <string name="reverse_client_status">Reverse Client Status</string>
+    <string name="handler_device_found">USB connection established!</string>
+    <string name="handler_connecting">Connecting a device...</string>
+    <string name="handler_device_not_found">Device not found</string>
+    <string name="handler_disconnecting">USB device is disconnecting!</string>
+    <string name="usb_connected">The USB is connected 🟢</string>
+    <string name="usb_disconnected">The USB is disconnected 🔴</string>
+    <string name="device_is_controller">This device is the controller of the connection</string>
+    <string name="another_controller">The other device is the controller of the connection</string>
 </resources>

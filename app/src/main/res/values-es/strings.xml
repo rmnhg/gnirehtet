@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="relay_connected">Activado reverse tethering</string>
+    <string name="relay_disconnected">Desconectado del servidor relé</string>
+    <string name="stop_vpn">Detener Gnirehtet</string>
+    <string name="client_fragment_label">Fragmento de Cliente</string>
+    <string name="server_fragment_label">Fragmento de Servidor</string>
+    <string name="next">Siguiente</string>
+    <string name="previous">Anterior</string>
+    <string name="lorem_ipsum">A Pepe le gusta el marisco</string>
+    <string name="server_status">Estado del servidor</string>
+    <string name="client_status">Estado del cliente</string>
+    <string name="connect">Conectar</string>
+    <string name="disconnect">Desconectar</string>
+    <string name="start">Iniciar</string>
+    <string name="stop">Detener</string>
+    <string name="to_server_screen">Cambiar a pantalla del servidor</string>
+    <string name="to_client_screen">Cambiar a pantalla del cliente</string>
+    <string name="reverse_client_status">Estado del cliente inverso</string>
+    <string name="handler_device_found">¡La conexión USB se ha establecido!</string>
+    <string name="handler_connecting">Conectando dispositivo por USB...</string>
+    <string name="handler_device_not_found">Dispositivo USB no encontrado</string>
+    <string name="handler_disconnecting">Desconectando dispositivo USB</string>
+    <string name="usb_connected">El USB está conectado 🟢</string>
+    <string name="usb_disconnected">El USB está desconectado 🔴</string>
+    <string name="device_is_controller">Este dispositivo es el controlador de la conexión</string>
+    <string name="another_controller">El otro dispositivo es el controlador de la conexión</string>
+</resources>

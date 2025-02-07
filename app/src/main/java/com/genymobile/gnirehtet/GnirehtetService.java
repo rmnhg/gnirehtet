@@ -81,7 +81,7 @@ public class GnirehtetService extends VpnService {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         String action = intent.getAction();
-        Log.d(TAG, "Received request " + action);
+        Log.d(TAG, "Received request ".concat(action));
         if (ACTION_START_VPN.equals(action)) {
             if (isRunning()) {
                 Log.d(TAG, "VPN already running, ignore START request");
@@ -160,7 +160,7 @@ public class GnirehtetService extends VpnService {
                 setUnderlyingNetworks(new Network[] {vpnNetwork});
             }
         } else {
-            Log.w(TAG, "Cannot set underlying network, API version " + Build.VERSION.SDK_INT + " < 22");
+            Log.w(TAG, "Cannot set underlying network, API version ".concat(String.valueOf(Build.VERSION.SDK_INT)).concat(" < 22"));
         }
     }
 

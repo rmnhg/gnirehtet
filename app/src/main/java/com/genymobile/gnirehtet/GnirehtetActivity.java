@@ -36,7 +36,7 @@ public class GnirehtetActivity extends Activity {
 
     private void handleIntent(Intent intent) {
         String action = intent.getAction();
-        Log.d(TAG, "Received request " + action);
+        Log.d(TAG, "Received request ".concat(action));
         boolean finish = true;
         if (ACTION_GNIREHTET_START.equals(action)) {
             VpnConfiguration config = createConfig(intent);

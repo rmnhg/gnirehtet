@@ -21,7 +21,10 @@ public class InvalidCIDRException extends Exception {
     private String cidr;
 
     private static String createMessage(String cidr) {
-        return "Invalid CIDR:" + cidr;
+        StringBuilder sb = new StringBuilder();
+        sb.append("Invalid CIDR:");
+        sb.append(cidr);
+        return sb.toString();
     }
 
     public InvalidCIDRException(String cidr, Throwable cause) {

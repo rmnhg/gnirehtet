@@ -1,8 +1,10 @@
 <resources>
 
+    <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar" />
     <!-- Base application theme. -->
-    <style name="AppTheme">
-        <!-- Customize your theme here. -->
+    <style name="Base.AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
     <style name="Theme.Transparent" parent="android:Theme">

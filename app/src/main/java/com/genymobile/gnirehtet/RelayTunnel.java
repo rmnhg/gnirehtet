@@ -70,7 +70,7 @@ public final class RelayTunnel implements Tunnel {
     private static void readClientId(InputStream inputStream) throws IOException {
         Log.d(TAG, "Requesting client id");
         int clientId = new DataInputStream(inputStream).readInt();
-        Log.d(TAG, "Connected to the relay server as #" + Binary.unsigned(clientId));
+        Log.d(TAG, "Connected to the relay server as #".concat(String.valueOf(Binary.unsigned(clientId))));
     }
 
     @Override

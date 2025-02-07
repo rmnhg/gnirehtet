@@ -1,13 +1,11 @@
 apply plugin: 'com.android.application'
 
-//apply plugin: 'com.android.application'
-
 android {
     namespace "com.genymobile.gnirehtet"
     defaultConfig {
         archivesBaseName = "gnirehtet" // change apk name
         applicationId "com.genymobile.gnirehtet"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 29 //TODO: REVISAR
         compileSdk rootProject.ext.compileSdkVersion
         versionCode 9
@@ -23,24 +21,40 @@ android {
     buildFeatures {
         viewBinding true
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_21
+    }
+
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            merges += "META-INF/LICENSE.md"
+            merges += "META-INF/LICENSE-notice.md"
+        }
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.google.android.material:material:1.12.0'
-    implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.navigation:navigation-fragment:2.6.0'
-    implementation 'androidx.navigation:navigation-ui:2.6.0'
+    implementation 'com.google.android.material:material:1.1.0-alpha09'
+    implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta2'
+    implementation 'androidx.navigation:navigation-fragment:2.3.0'
+    implementation 'androidx.navigation:navigation-ui:2.3.0'
+    implementation project(':relay-java')
+    implementation project(':adblib')
+    implementation 'dev.mobile:dadb:1.2.8'
+    implementation 'androidx.core:core-ktx:1.1.0-beta01'
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
 }
+
+tasks.register("testClasses")
 
 apply from: "$project.rootDir/config/android-checkstyle.gradle"
 apply from: "$project.rootDir/config/android-signing.gradle"
+apply plugin: 'org.jetbrains.kotlin.android'

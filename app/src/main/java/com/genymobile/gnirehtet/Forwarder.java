@@ -106,7 +106,8 @@ public class Forwarder {
                     tunnel.send(buffer, r);
                 } else {
                     // see <https://github.com/Genymobile/gnirehtet/issues/69>
-                    Log.w(TAG, "Unexpected packet IP version: " + version);
+
+                    Log.w(TAG, "Unexpected packet IP version: ".concat(String.valueOf(version)));
                 }
             } else {
                 Log.d(TAG, "Empty read");

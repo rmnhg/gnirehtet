@@ -56,8 +56,8 @@ public class IPPacketOutputStream extends OutputStream {
             throw new IOException("IPPacketOutputStream does not support writing more than one packet at a time");
         }
         // by design, the buffer must always have enough space for one packet
-        if (BuildConfig.DEBUG && len > buffer.remaining()) {
-            Log.e(TAG, len  + " must be <= than " + buffer.remaining());
+        if (/*BuildConfig.DEBUG && */len > buffer.remaining()) {
+            Log.e(TAG, "".concat(String.valueOf(len)).concat(" must be <= than ").concat(String.valueOf(buffer.remaining())));
             Log.e(TAG, buffer.toString());
             throw new AssertionError("Buffer is unexpectedly full");
         }
@@ -92,7 +92,7 @@ public class IPPacketOutputStream extends OutputStream {
             return false;
         }
         if (version != 4) {
-            Log.e(TAG, "Unsupported packet received, IP version is:" + version);
+            Log.e(TAG, "Unsupported packet received, IP version is:".concat(String.valueOf(version)));
             Log.d(TAG, "Clearing buffer");
             buffer.clear();
             return false;
@@ -125,7 +125,7 @@ public class IPPacketOutputStream extends OutputStream {
     }
 
     /**
-     * Read the packet length, assuming thatan IP packet is stored at absolute position 0.
+     * Read the packet length, assuming that an IP packet is stored at absolute position 0.
      *
      * @param buffer the buffer
      * @return the packet length, or {@code -1} if not available
