@@ -30,6 +30,7 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+      working-directory: ./app
     - uses: actions/upload-artifact@v4
       name: "Upload generated APK"
       with:
